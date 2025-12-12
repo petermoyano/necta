@@ -10,7 +10,8 @@ export default async function AdminPage() {
   const votes = await getVotes()
   
   const totalVotes = Object.values(votes).reduce(
-    (sum, prizeVotes) => sum + Object.values(prizeVotes).reduce((s, c) => s + c, 0),
+    (sum: number, prizeVotes: Record<string, number>) => 
+      sum + Object.values(prizeVotes).reduce((s: number, c: number) => s + c, 0),
     0
   )
 
