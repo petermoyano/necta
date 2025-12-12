@@ -112,13 +112,7 @@ export default function VotarPage() {
             </div>
 
             {/* Instruction */}
-            <div className="bg-purple-900/30 border border-purple-700/50 rounded-xl px-4 py-3 text-center">
-              <p className="text-purple-200 text-sm">
-                📝 Escribí <span className="text-purple-300 font-semibold">NOMBRE Y APELLIDO</span> en MAYÚSCULAS
-                <br />
-                <span className="text-purple-300/60">(sin segundo nombre)</span>
-              </p>
-            </div>
+
 
             {/* Autocomplete */}
             <NameAutocomplete 
@@ -128,7 +122,7 @@ export default function VotarPage() {
 
             {/* Help text */}
             <p className="text-purple-200/70 text-sm text-center">
-              Empezá a escribir y seleccioná el nombre de la lista
+                Elegi tu ganador!
             </p>
           </div>
         )}

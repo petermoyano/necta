@@ -1,8 +1,7 @@
 import Image from 'next/image'
 import { getVotes } from '@/app/actions/votes'
-import { PRIZES } from '@/app/lib/types'
-import { WordCloud } from '@/app/components/word-cloud'
 import Link from 'next/link'
+import { AdminClient } from './admin-client'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
@@ -23,7 +22,7 @@ export default async function AdminPage() {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto">
+      <div className="relative z-10 max-w-4xl mx-auto flex flex-col min-h-[calc(100vh-4rem)]">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <Link 
@@ -69,24 +68,8 @@ export default async function AdminPage() {
           </p>
         </div>
 
-        {/* Word clouds */}
-        <div className="grid gap-6">
-          {PRIZES.map((prize) => (
-            <WordCloud
-              key={prize.slug}
-              votes={votes[prize.slug]}
-              title={prize.title}
-              emoji={prize.emoji}
-            />
-          ))}
-        </div>
-
-        {/* Footer */}
-        <div className="mt-10 text-center">
-          <p className="text-purple-300/60 text-sm">
-            Los resultados se actualizan al recargar la página
-          </p>
-        </div>
+        {/* Client component with toggle and clear functionality */}
+        <AdminClient votes={votes} totalVotes={totalVotes} />
       </div>
     </main>
   )

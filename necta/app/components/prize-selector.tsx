@@ -10,10 +10,10 @@ export function PrizeSelector() {
         <Link
           key={prize.slug}
           href={`/votar/${prize.slug}`}
-          className="group relative overflow-hidden rounded-2xl border border-purple-500/20 bg-gradient-to-br from-purple-900/50 to-purple-950/50 p-6 transition-all duration-300 hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/10 hover:scale-[1.02]"
+          className="group relative overflow-hidden rounded-2xl border-2 border-purple-300/40 bg-gradient-to-br from-purple-700/90 to-purple-800/90 backdrop-blur-sm p-6 transition-all duration-300 hover:border-purple-300/60 hover:shadow-xl hover:shadow-purple-500/30 hover:scale-[1.02]"
           style={{ animationDelay: `${index * 100}ms` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
           
           <div className="relative flex items-start gap-4">
             <span className="text-4xl">{prize.emoji}</span>

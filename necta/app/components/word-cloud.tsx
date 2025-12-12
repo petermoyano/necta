@@ -11,7 +11,7 @@ export function WordCloud({ votes, title, emoji }: WordCloudProps) {
   
   if (entries.length === 0) {
     return (
-      <div className="bg-purple-900/30 border border-purple-800/50 rounded-2xl p-6">
+      <div className="bg-purple-700/80 border-2 border-purple-400/40 rounded-2xl p-6 backdrop-blur-sm">
         <div className="flex items-center gap-3 mb-4">
           <span className="text-3xl">{emoji}</span>
           <h2 className="text-xl font-semibold text-purple-200">{title}</h2>
@@ -39,8 +39,8 @@ export function WordCloud({ votes, title, emoji }: WordCloudProps) {
   const winner = entries[0]
   const totalVotes = entries.reduce((sum, [, count]) => sum + count, 0)
 
-  return (
-    <div className="bg-purple-900/30 border border-purple-800/50 rounded-2xl p-6">
+    return (
+      <div className="bg-purple-700/80 border-2 border-purple-400/40 rounded-2xl p-6 backdrop-blur-sm">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
           <span className="text-3xl">{emoji}</span>

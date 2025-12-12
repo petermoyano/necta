@@ -52,4 +52,19 @@ export async function getVotesForPrize(prizeSlug: PrizeSlug): Promise<Record<str
   return votes[prizeSlug] || {}
 }
 
+export async function clearAllVotes(): Promise<{ success: boolean; error?: string }> {
+  try {
+    const emptyVotes: VotesData = {
+      'mejor-companero': {},
+      'voz-del-equipo': {},
+      'salva-el-dia': {}
+    }
+    await writeVotes(emptyVotes)
+    return { success: true }
+  } catch (error) {
+    console.error('Error clearing votes:', error)
+    return { success: false, error: 'No se pudieron limpiar los votos' }
+  }
+}
+
 

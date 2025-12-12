@@ -90,7 +90,7 @@ export function NameAutocomplete({ prizeSlug, onVoteSuccess }: NameAutocompleteP
         <Input
           ref={inputRef}
           type="text"
-          placeholder="Escribí NOMBRE Y APELLIDO..."
+          placeholder="Eelegi a alguien..."
           value={query}
           onChange={(e) => {
             setQuery(e.target.value.toUpperCase())
