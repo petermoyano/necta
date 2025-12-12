@@ -90,7 +90,7 @@ export function NameAutocomplete({ prizeSlug, onVoteSuccess }: NameAutocompleteP
         <Input
           ref={inputRef}
           type="text"
-          placeholder="Eelegi a alguien..."
+          placeholder="Elegí a alguien..."
           value={query}
           onChange={(e) => {
             setQuery(e.target.value.toUpperCase())
@@ -103,7 +103,7 @@ export function NameAutocomplete({ prizeSlug, onVoteSuccess }: NameAutocompleteP
           }}
           onKeyDown={handleKeyDown}
           disabled={isSubmitting}
-          className="h-14 text-lg bg-purple-950/50 border-purple-700/50 text-white placeholder:text-purple-400/50 focus:border-purple-500 focus:ring-purple-500/20 uppercase"
+          className="h-14 text-lg bg-purple-950/50 border-purple-700/50 text-white placeholder:text-purple-400/50 focus:border-purple-500 focus:ring-purple-500/20"
         />
         {isSubmitting && (
           <div className="absolute right-4 top-1/2 -translate-y-1/2">
