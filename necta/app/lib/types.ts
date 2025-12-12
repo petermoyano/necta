@@ -38,3 +38,4 @@ export function getPrizeBySlug(slug: string): Prize | undefined {
   return PRIZES.find(p => p.slug === slug)
 }
 
+

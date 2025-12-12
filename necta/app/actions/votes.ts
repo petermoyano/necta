@@ -52,3 +52,4 @@ export async function getVotesForPrize(prizeSlug: PrizeSlug): Promise<Record<str
   return votes[prizeSlug] || {}
 }
 
+
