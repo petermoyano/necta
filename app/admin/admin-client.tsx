@@ -50,20 +50,19 @@ export function AdminClient({ votes, totalVotes }: AdminClientProps) {
   return (
     <>
       {/* Toggle buttons for each prize */}
-      <div className="flex flex-col gap-3 mb-8">
+      <div className="flex flex-wrap justify-center gap-3 mb-8">
         {PRIZES.map((prize) => (
           <Button
             key={prize.slug}
             onClick={() => togglePrize(prize.slug)}
-            className="h-12 px-6 bg-purple-600 hover:bg-purple-700 text-white font-semibold border-2 border-purple-400/50 flex items-center justify-between"
+            className={`h-11 px-5 font-medium rounded-full transition-all duration-200 flex items-center gap-2 ${
+              visiblePrizes[prize.slug]
+                ? 'bg-purple-500 hover:bg-purple-600 text-white shadow-lg shadow-purple-500/30'
+                : 'bg-purple-900/50 hover:bg-purple-800/70 text-purple-200 border border-purple-500/30'
+            }`}
           >
-            <span className="flex items-center gap-2">
-              <span>{prize.emoji}</span>
-              <span>{prize.title}</span>
-            </span>
-            <span className="text-sm">
-              {visiblePrizes[prize.slug] ? 'Ocultar' : 'Mostrar'}
-            </span>
+            <span>{prize.emoji}</span>
+            <span className="text-sm">{prize.title}</span>
           </Button>
         ))}
       </div>
