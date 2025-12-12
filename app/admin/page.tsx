@@ -65,7 +65,7 @@ export default async function AdminPage() {
             </h1>
           </div>
           <p className="text-purple-200/80">
-            Premios Necta 2024 — {totalVotes} voto{totalVotes !== 1 ? 's' : ''} registrado{totalVotes !== 1 ? 's' : ''}
+            Premios Necta 2025 — {totalVotes} voto{totalVotes !== 1 ? 's' : ''} registrado{totalVotes !== 1 ? 's' : ''}
           </p>
         </div>
 

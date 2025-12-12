@@ -13,18 +13,18 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Premios Necta 2024',
-  description: '¡Es hora de votar! Elegí a tus ganadores en los Premios Necta 2024',
+  title: 'Premios Necta 2025',
+  description: '¡Es hora de votar! Elegí a tus ganadores en los Premios Necta 2025',
   metadataBase: new URL('https://necta-nine.vercel.app'),
   openGraph: {
-    title: 'Premios Necta 2024',
-    description: '¡Es hora de votar! Elegí a tus ganadores en los Premios Necta 2024',
+    title: 'Premios Necta 2025',
+    description: '¡Es hora de votar! Elegí a tus ganadores en los Premios Necta 2025',
     images: [
       {
         url: '/logo-necta.jpeg',
         width: 120,
         height: 120,
-        alt: 'Premios Necta 2024',
+        alt: 'Premios Necta 2025',
       },
     ],
     locale: 'es_AR',
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary',
-    title: 'Premios Necta 2024',
-    description: '¡Es hora de votar! Elegí a tus ganadores en los Premios Necta 2024',
+    title: 'Premios Necta 2025',
+    description: '¡Es hora de votar! Elegí a tus ganadores en los Premios Necta 2025',
     images: ['/logo-necta.jpeg'],
   },
   icons: {

@@ -26,7 +26,7 @@ export default function Home() {
         {/* Title */}
         <div className="text-center space-y-2">
           <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-200 via-purple-400 to-purple-200 bg-clip-text text-transparent">
-            Premios Necta 2024
+            Premios Necta 2025
           </h1>
           <p className="text-purple-200/80 text-lg">
             Elegí un premio y votá a esa persona especial
