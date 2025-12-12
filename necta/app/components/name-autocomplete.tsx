@@ -103,17 +103,17 @@ export function NameAutocomplete({ prizeSlug, onVoteSuccess }: NameAutocompleteP
           }}
           onKeyDown={handleKeyDown}
           disabled={isSubmitting}
-          className="h-14 text-lg bg-zinc-900 border-zinc-700 text-white placeholder:text-zinc-500 focus:border-amber-500 focus:ring-amber-500/20 uppercase"
+          className="h-14 text-lg bg-purple-950/50 border-purple-700/50 text-white placeholder:text-purple-400/50 focus:border-purple-500 focus:ring-purple-500/20 uppercase"
         />
         {isSubmitting && (
           <div className="absolute right-4 top-1/2 -translate-y-1/2">
-            <div className="w-5 h-5 border-2 border-amber-500 border-t-transparent rounded-full animate-spin" />
+            <div className="w-5 h-5 border-2 border-purple-500 border-t-transparent rounded-full animate-spin" />
           </div>
         )}
       </div>
 
       {showDropdown && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-zinc-900 border border-zinc-700 rounded-xl shadow-xl overflow-hidden z-50">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-purple-950/95 border border-purple-700/50 rounded-xl shadow-xl overflow-hidden z-50">
           {hasResults ? (
             <ul ref={listRef} className="max-h-64 overflow-y-auto py-2">
               {filteredEmployees.map((employee, index) => (
@@ -123,8 +123,8 @@ export function NameAutocomplete({ prizeSlug, onVoteSuccess }: NameAutocompleteP
                     onClick={() => handleSelect(employee)}
                     className={`w-full px-4 py-3 text-left transition-colors ${
                       index === highlightedIndex
-                        ? 'bg-amber-500/20 text-amber-100'
-                        : 'text-zinc-300 hover:bg-zinc-800'
+                      ? 'bg-purple-500/20 text-purple-100'
+                      : 'text-purple-200 hover:bg-purple-900/50'
                     }`}
                   >
                     {highlightMatch(employee, normalizedQuery)}
@@ -137,7 +137,7 @@ export function NameAutocomplete({ prizeSlug, onVoteSuccess }: NameAutocompleteP
               <p className="text-red-400 font-medium">
                 No se encontró ningún empleado
               </p>
-              <p className="text-zinc-500 text-sm mt-1">
+                <p className="text-purple-300/60 text-sm mt-1">
                 Intentá con otro nombre
               </p>
             </div>
@@ -157,7 +157,7 @@ function highlightMatch(text: string, query: string) {
   return (
     <>
       {text.slice(0, index)}
-      <span className="text-amber-400 font-semibold">
+      <span className="text-purple-300 font-semibold">
         {text.slice(index, index + query.length)}
       </span>
       {text.slice(index + query.length)}

@@ -11,12 +11,12 @@ export function WordCloud({ votes, title, emoji }: WordCloudProps) {
   
   if (entries.length === 0) {
     return (
-      <div className="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6">
+      <div className="bg-purple-900/30 border border-purple-800/50 rounded-2xl p-6">
         <div className="flex items-center gap-3 mb-4">
           <span className="text-3xl">{emoji}</span>
-          <h2 className="text-xl font-semibold text-zinc-200">{title}</h2>
+          <h2 className="text-xl font-semibold text-purple-200">{title}</h2>
         </div>
-        <p className="text-zinc-500 text-center py-8">
+        <p className="text-purple-300/60 text-center py-8">
           Todavía no hay votos en esta categoría
         </p>
       </div>
@@ -40,13 +40,13 @@ export function WordCloud({ votes, title, emoji }: WordCloudProps) {
   const totalVotes = entries.reduce((sum, [, count]) => sum + count, 0)
 
   return (
-    <div className="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6">
+    <div className="bg-purple-900/30 border border-purple-800/50 rounded-2xl p-6">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
           <span className="text-3xl">{emoji}</span>
-          <h2 className="text-xl font-semibold text-zinc-200">{title}</h2>
+          <h2 className="text-xl font-semibold text-purple-200">{title}</h2>
         </div>
-        <span className="text-sm text-zinc-500">
+        <span className="text-sm text-purple-300/70">
           {totalVotes} voto{totalVotes !== 1 ? 's' : ''}
         </span>
       </div>
@@ -61,8 +61,8 @@ export function WordCloud({ votes, title, emoji }: WordCloudProps) {
               key={name}
               className={`transition-all duration-300 hover:scale-110 cursor-default ${
                 isWinner 
-                  ? 'text-amber-400 font-bold drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]' 
-                  : 'text-zinc-300 hover:text-amber-200'
+                  ? 'text-purple-300 font-bold drop-shadow-[0_0_10px_rgba(196,181,253,0.5)]' 
+                  : 'text-purple-200/80 hover:text-purple-200'
               }`}
               style={{ 
                 fontSize: `${fontSize}px`,
@@ -77,11 +77,11 @@ export function WordCloud({ votes, title, emoji }: WordCloudProps) {
       </div>
 
       {/* Winner highlight */}
-      <div className="mt-6 pt-4 border-t border-zinc-800">
-        <div className="flex items-center justify-center gap-2 text-amber-400">
+      <div className="mt-6 pt-4 border-t border-purple-800/50">
+        <div className="flex items-center justify-center gap-2 text-purple-300">
           <span className="text-lg">👑</span>
           <span className="font-semibold">{winner[0]}</span>
-          <span className="text-zinc-500 text-sm">
+          <span className="text-purple-300/70 text-sm">
             ({winner[1]} voto{winner[1] !== 1 ? 's' : ''})
           </span>
         </div>
