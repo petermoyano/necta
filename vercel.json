@@ -1,5 +1,0 @@
-{
-  "buildCommand": "cd necta && npm install && npm run build",
-  "outputDirectory": "necta/.next"
-}
-
