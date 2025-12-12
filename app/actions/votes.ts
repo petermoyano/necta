@@ -1,16 +1,21 @@
 'use server'
 
-import { promises as fs } from 'fs'
-import path from 'path'
+import { kv } from '@vercel/kv'
 import type { PrizeSlug, VotesData } from '@/app/lib/types'
 
-const VOTES_FILE = path.join(process.cwd(), 'data', 'votes.json')
+// Keys for storing votes in KV
+const VOTES_KEY = 'necta:votes'
 
 async function readVotes(): Promise<VotesData> {
   try {
-    const data = await fs.readFile(VOTES_FILE, 'utf-8')
-    return JSON.parse(data)
-  } catch {
+    const votes = await kv.get<VotesData>(VOTES_KEY)
+    return votes || {
+      'mejor-companero': {},
+      'voz-del-equipo': {},
+      'salva-el-dia': {}
+    }
+  } catch (error) {
+    console.error('Error reading votes from KV:', error)
     return {
       'mejor-companero': {},
       'voz-del-equipo': {},
@@ -20,7 +25,7 @@ async function readVotes(): Promise<VotesData> {
 }
 
 async function writeVotes(votes: VotesData): Promise<void> {
-  await fs.writeFile(VOTES_FILE, JSON.stringify(votes, null, 2))
+  await kv.set(VOTES_KEY, votes)
 }
 
 export async function submitVote(prizeSlug: PrizeSlug, employeeName: string): Promise<{ success: boolean; error?: string }> {
@@ -66,5 +71,3 @@ export async function clearAllVotes(): Promise<{ success: boolean; error?: strin
     return { success: false, error: 'No se pudieron limpiar los votos' }
   }
 }
-
-
